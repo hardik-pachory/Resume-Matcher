@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<head>
+    <title>{%block title%}Resume Matcher{% endblock %}</title>
+    <meta name="description" content="Resume Matcher App is NLP based prsoject that checks resume for particular job description." />
+    <meta name="keywords" content="Resume, Resume Matcher, Jobs, Hardik Pachory" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container-fluid p-2 p-md-4 text-white bg-dark">
+        <div class="col-md-6 px-0">
+          <h1 class="display-4">Resume Matcher</h1>
+            <p class="lead my-3">Upload the 'Job Description' file and then upload 'Resume' file. And check whether the resume is suitable for job description or not.</p>
+        </div>
+        <div class="row mt-4">
+            <div class="offset-1 col-sm-3">
+                <a href="/"><i class="fas fa-home fa-2x" style="color:#e87139;"></i></a>
+            </div>
+            <div class="offset-1 col-sm-3">
+                <a href="how_to_use"><i class="far fa-question-circle fa-2x" style="color:#36cbda;"></i></a>
+            </div>
+            <div class="offset-1 col-sm-3">
+                <a href="developer"><i class="far fa-user fa-2x" style="color:#5439e8;"></i></a>
+            </div>
+        </div>
+    </div>
+    {% block content %}
+    <div class="container-fluid mt-3">
+        <div class="row">
+            <div class="offset-3 col-sm-6">
+                <form class="form-control p-4 p-md-4" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <h1>Upload Job Role</h1>
+                    <input class="form-control" type="file" name="document">
+                    <h1 class="pt-4">Upload Resume</h1>
+                    <input class="form-control" type="file" name="resume">
+                    <button class="btn btn-block mt-3 btn-primary" type="submit">Upload Files</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+<footer class="mt-5">
+    <p class="text-center">Made By Hardik Pachory With ❤️✨</p>
+</footer>
+</body>

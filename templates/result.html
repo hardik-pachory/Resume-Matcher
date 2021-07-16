@@ -1,0 +1,13 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<div class="jumbotron jumbotron-fluid bg-info mt-4 p-5 p-md-5">
+        <div class="container">
+            <h1 class="display-4 text-light text-center">{{ match_percent }}%</h1>
+            <p class="lead text-light text-center">Your resume matches {{ match_percent }}% with the given job description. </p>
+        </div>
+        <div class="offset-4 p-4 col-sm-4">
+            <a href="" style="text-decoration:none;"><button class="btn btn-block btn-danger">Go Back  <i class="fas fa-home"></i></button></a>
+        </div>
+    </div>
+{% endblock %}
